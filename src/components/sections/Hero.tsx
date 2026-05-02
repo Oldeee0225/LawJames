@@ -14,7 +14,7 @@ export default function Hero() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-50"
         >
-          <source src="/videos/8061655-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+          <source src="https://i.imgur.com/5Y1t4Cp.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/80 via-[#020617]/40 to-[#020617]" />
       </div>
