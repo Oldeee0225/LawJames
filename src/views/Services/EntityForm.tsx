@@ -70,7 +70,7 @@ export default function EntityForm() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover opacity-75"
           >
-            <source src="https://firebasestorage.googleapis.com/v0/b/lawjames-e2e33.firebasestorage.app/o/VideoNoche.mp4?alt=media&token=8e0bd5e4-1a54-4ddd-b6e4-223b8d99f09d" type="video/mp4" />
+            <source src="/videos/VideoNoche.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/80 via-[#020617]/40 to-[#020617]" />
         </div>
