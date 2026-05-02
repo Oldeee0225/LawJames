@@ -1,87 +1,51 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft, Building2, ShieldCheck, Briefcase, FileText, Users, Landmark } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
+import { servicesTranslations } from "../../i18n/servicesTranslations";
 import { VIDEOS } from "../../config/videos";
 
-const corporateCategories = [
-  {
-    category: "1. Strategic Governance",
-    entities: [
-      {
-        title: "Corporate Governance Advisory",
-        description: "We provide strategic guidance to ensure your entity operates with structure, transparency, and full regulatory compliance.",
-        icon: <Building2 className="w-6 h-6" />
-      },
-      {
-        title: "Governance Framework Design",
-        description: "We establish clear governance frameworks that strengthen operational integrity and long-term stability across your entities.",
-        icon: <FileText className="w-6 h-6" />
-      }
-    ]
-  },
-  {
-    category: "2. Records & Resolutions Management",
-    entities: [
-      {
-        title: "Board Resolution Management",
-        description: "We manage the drafting, execution, and documentation of board resolutions in accordance with legal standards.",
-        icon: <FileText className="w-6 h-6" />
-      },
-      {
-        title: "Corporate Records Maintenance",
-        description: "We maintain accurate and up-to-date corporate records, ensuring accessibility and full regulatory compliance.",
-        icon: <Briefcase className="w-6 h-6" />
-      }
-    ]
-  },
-  {
-    category: "3. Internal Controls & Compliance",
-    entities: [
-      {
-        title: "Internal Controls Implementation",
-        description: "We design and implement internal control systems tailored to complex legal structures, optimizing operational efficiency.",
-        icon: <ShieldCheck className="w-6 h-6" />
-      },
-      {
-        title: "Regulatory Compliance Audits",
-        description: "We assess and verify compliance with applicable regulations to reduce legal and operational risks.",
-        icon: <ShieldCheck className="w-6 h-6" />
-      }
-    ]
-  },
-  {
-    category: "4. Governance Structures",
-    entities: [
-      {
-        title: "Board Structuring",
-        description: "We advise on the formation and structuring of boards aligned with your entity’s strategic objectives.",
-        icon: <Users className="w-6 h-6" />
-      },
-      {
-        title: "Decision-Making Protocols",
-        description: "We establish clear and efficient decision-making protocols to eliminate ambiguity and strengthen governance processes.",
-        icon: <Briefcase className="w-6 h-6" />
-      }
-    ]
-  },
-  {
-    category: "5. Stability & Risk Management",
-    entities: [
-      {
-        title: "Corporate Risk Mitigation",
-        description: "We identify and mitigate operational and legal risks, ensuring long-term stability across your corporate structures.",
-        icon: <ShieldCheck className="w-6 h-6" />
-      },
-      {
-        title: "Operational Integrity Management",
-        description: "We strengthen operational integrity through frameworks that promote transparency, accountability, and compliance.",
-        icon: <Landmark className="w-6 h-6" />
-      }
-    ]
-  }
-];
 export default function CorporateForm() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
+  const sT = servicesTranslations[language] || servicesTranslations['en'];
+
+  const corporateCategories = [
+    {
+      category: sT.corpCat1,
+      entities: [
+        { title: sT.corpCat1E1Title, description: sT.corpCat1E1Desc, badge: sT.corpCat1E1Badge, icon: <Building2 className="w-6 h-6" /> },
+        { title: sT.corpCat1E2Title, description: sT.corpCat1E2Desc, badge: sT.corpCat1E2Badge, icon: <FileText className="w-6 h-6" /> }
+      ]
+    },
+    {
+      category: sT.corpCat2,
+      entities: [
+        { title: sT.corpCat2E1Title, description: sT.corpCat2E1Desc, badge: sT.corpCat2E1Badge, icon: <FileText className="w-6 h-6" /> },
+        { title: sT.corpCat2E2Title, description: sT.corpCat2E2Desc, badge: sT.corpCat2E2Badge, icon: <Briefcase className="w-6 h-6" /> }
+      ]
+    },
+    {
+      category: sT.corpCat3,
+      entities: [
+        { title: sT.corpCat3E1Title, description: sT.corpCat3E1Desc, badge: sT.corpCat3E1Badge, icon: <ShieldCheck className="w-6 h-6" /> },
+        { title: sT.corpCat3E2Title, description: sT.corpCat3E2Desc, badge: sT.corpCat3E2Badge, icon: <ShieldCheck className="w-6 h-6" /> }
+      ]
+    },
+    {
+      category: sT.corpCat4,
+      entities: [
+        { title: sT.corpCat4E1Title, description: sT.corpCat4E1Desc, badge: sT.corpCat4E1Badge, icon: <Users className="w-6 h-6" /> },
+        { title: sT.corpCat4E2Title, description: sT.corpCat4E2Desc, badge: sT.corpCat4E2Badge, icon: <Briefcase className="w-6 h-6" /> }
+      ]
+    },
+    {
+      category: sT.corpCat5,
+      entities: [
+        { title: sT.corpCat5E1Title, description: sT.corpCat5E1Desc, badge: sT.corpCat5E1Badge, icon: <ShieldCheck className="w-6 h-6" /> },
+        { title: sT.corpCat5E2Title, description: sT.corpCat5E2Desc, badge: sT.corpCat5E2Badge, icon: <Landmark className="w-6 h-6" /> }
+      ]
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-[#020617] text-white">
       {/* Top Header Section with Video Background */}
@@ -112,21 +76,13 @@ export default function CorporateForm() {
             </span>
 
             <h1 className="text-4xl md:text-6xl font-bold mb-10 leading-tight">
-              Corporate <span className="gold-gradient italic">Governance</span>
+              {sT.corpFormPageTitle} <span className="gold-gradient italic">{sT.corpFormPageTitleHighlight}</span>
             </h1>
 
             <div className="space-y-6 text-gray-400 font-light text-lg leading-relaxed max-w-4xl">
-              <p>
-                We provide strategic corporate governance advisory to ensure your entity operates with structure, transparency, and full regulatory compliance.
-              </p>
-
-              <p>
-                Our services include board resolution management, corporate records maintenance, and the implementation of internal controls tailored to complex legal structures.
-              </p>
-
-              <p>
-                By establishing clear governance frameworks, we help our clients strengthen operational integrity, mitigate risk, and maintain long-term stability across all corporate entities.
-              </p>
+              <p>{sT.corpFormPageP1}</p>
+              <p>{sT.corpFormPageP2}</p>
+              <p>{sT.corpFormPageP3}</p>
             </div>
           </div>
         </div>
@@ -144,12 +100,10 @@ export default function CorporateForm() {
                   <div key={eIdx} className="premium-card p-8 rounded-2xl group">
                     <div className="text-[#d4af37] mb-6 flex items-center justify-between">
                       {entity.icon}
-                      <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold border border-white/5 px-3 py-1 rounded-full">Gobernanza</span>
+                      <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold border border-white/5 px-3 py-1 rounded-full">{entity.badge}</span>
                     </div>
                     <h3 className="text-xl font-bold mb-4">{entity.title}</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">
-                      {entity.description}
-                    </p>
+                    <p className="text-gray-400 text-sm leading-relaxed">{entity.description}</p>
                   </div>
                 ))}
               </div>
@@ -159,13 +113,9 @@ export default function CorporateForm() {
 
         <div className="mt-32 p-12 rounded-3xl bg-gradient-to-br from-[#0f172a] to-[#020617] border border-[#d4af37]/20 text-center">
           <h2 className="text-3xl font-bold mb-6 italic">
-            Need <span className="gold-gradient">Governance Advisory?</span>
+            {sT.corpFormCTA} <span className="gold-gradient">{sT.corpFormCTAHighlight}</span>
           </h2>
-
-          <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
-            We analyze your corporate structure to implement governance frameworks tailored to your specific operational and strategic needs.
-          </p>
-
+          <p className="text-gray-400 mb-10 max-w-2xl mx-auto">{sT.corpFormCTADesc}</p>
           <Link
             to="/contact"
             className="inline-block bg-[#d4af37] hover:bg-[#b8962e] text-black px-10 py-4 rounded font-bold transition-all btn-premium shadow-lg shadow-[#d4af37]/10"
@@ -177,4 +127,3 @@ export default function CorporateForm() {
     </div>
   );
 }
-
