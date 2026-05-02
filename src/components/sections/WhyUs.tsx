@@ -1,5 +1,6 @@
 import { Globe, Scale, Lock } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
+import { VIDEOS } from "../../config/videos";
 
 export default function WhyPanama() {
   const { t } = useLanguage();
@@ -53,7 +54,7 @@ export default function WhyPanama() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none"></div>
           <div className="absolute inset-0 bg-[#d4af37]/10 mix-blend-overlay z-10 pointer-events-none transition-opacity duration-500 group-hover:opacity-0"></div>
           <video
-             src="/videos/14370557_3840_2160_24fps.mp4"
+             src={VIDEOS.video3}
              autoPlay
              loop
              muted

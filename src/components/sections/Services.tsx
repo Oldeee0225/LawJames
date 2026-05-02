@@ -2,6 +2,7 @@ import { Briefcase, Building2, ShieldCheck, UserCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import { servicesTranslations } from "../../i18n/servicesTranslations";
+import { VIDEOS } from "../../config/videos";
 
 export default function Services() {
   const { language, t } = useLanguage();
@@ -80,7 +81,7 @@ export default function Services() {
               playsInline
               className="absolute inset-0 w-full h-full object-cover opacity-60"
             >
-              <source src="/videos/7735818-hd_1920_1080_25fps.mp4" type="video/mp4" />
+              <source src={VIDEOS.video2} type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/20 to-transparent" />
             <div className="absolute bottom-10 left-10 right-10">

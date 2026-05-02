@@ -2,6 +2,7 @@ import { Briefcase, Building2, ShieldCheck, UserCheck, Home, Globe, Plane, MapPi
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import { servicesTranslations } from "../../i18n/servicesTranslations";
+import { VIDEOS } from "../../config/videos";
 
 export default function Process() {
   const { language, t } = useLanguage();
@@ -206,7 +207,7 @@ export default function Process() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover opacity-50"
           >
-            <source src="/videos/Fondo1.mp4" type="video/mp4" />
+            <source src={VIDEOS.fondo1} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/80 via-[#020617]/40 to-[#020617]" />
         </div>

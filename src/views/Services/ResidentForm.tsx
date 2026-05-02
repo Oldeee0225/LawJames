@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft, Building2, ShieldCheck, Briefcase, FileText, Users, Globe } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
+import { VIDEOS } from "../../config/videos";
 
 const residentCategories = [
   {
@@ -90,7 +91,7 @@ export default function ResidentForm() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover opacity-75"
           >
-            <source src="/videos/VideoNoche.mp4" type="video/mp4" />
+            <source src={VIDEOS.videoNoche} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/80 via-[#020617]/40 to-[#020617]" />
         </div>
