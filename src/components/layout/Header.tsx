@@ -84,9 +84,6 @@ export default function Header() {
             )}
           </div>
 
-          <Link to="/contact" className="bg-[#d4af37] hover:bg-[#b8962e] text-black px-6 py-2 rounded font-medium text-sm transition-all btn-premium whitespace-nowrap">
-            {t('header.consultation')}
-          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -133,9 +130,6 @@ export default function Header() {
           <Link onClick={() => setIsMenuOpen(false)} to="/contact" className="text-lg uppercase tracking-widest hover:text-[#d4af37] transition-colors">{t('header.contact')}</Link>
           
           <div className="pt-6 border-t border-white/10">
-            <Link onClick={() => setIsMenuOpen(false)} to="/contact" className="w-full block text-center bg-[#d4af37] hover:bg-[#b8962e] text-black px-6 py-4 rounded font-bold text-sm transition-all shadow-lg shadow-[#d4af37]/20">
-              {t('header.consultation')}
-            </Link>
           </div>
         </div>
       )}

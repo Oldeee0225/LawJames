@@ -1,4 +1,5 @@
-import { Award, ArrowRight } from "lucide-react";
+import { Award } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import { VIDEOS } from "../../config/videos";
 
@@ -35,15 +36,10 @@ export default function Hero() {
           {t('hero.description')}
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <button className="bg-[#d4af37] hover:bg-[#b8962e] text-black px-10 py-4 rounded font-semibold transition-all min-w-[200px] btn-premium">
-            {t('hero.primaryCTA')}
-          </button>
-
-          <button className="border border-white/20 hover:border-[#d4af37] px-10 py-4 rounded font-semibold transition-all flex items-center gap-2 min-w-[200px] justify-center backdrop-blur-sm group">
-            {t('hero.secondaryCTA')}
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+        <div className="flex justify-center items-center">
+          <Link to="/contact" className="bg-[#d4af37] hover:bg-[#b8962e] text-black px-10 py-4 rounded font-semibold transition-all min-w-[200px] btn-premium inline-block text-center">
+            {t('header.consultation')}
+          </Link>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 pt-12 border-t border-white/5">
