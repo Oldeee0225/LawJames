@@ -106,11 +106,11 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-[10px] uppercase tracking-widest text-gray-500 mb-1">{t('contact.officeTitle')}</div>
-                  <div className="text-white font-medium">+507 6922-1636</div>
+                  <div className="text-white font-medium">+507 6889-5353</div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-6 group">
+              <a href="https://wa.me/50768895353?text=Hello%2C%20I%20am%20interested%20in%20your%20legal%20services%20and%20would%20like%20to%20receive%20more%20information." target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 group">
                 <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
                   <MessageSquare className="w-5 h-5 text-green-500" />
                 </div>
@@ -118,7 +118,7 @@ export default function Contact() {
                   <div className="text-[10px] uppercase tracking-widest text-gray-500 mb-1">{t('contact.whatsappTitle')}</div>
                   <div className="text-green-500 font-medium cursor-pointer">{t('contact.whatsappSubtitle')}</div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
