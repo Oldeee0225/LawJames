@@ -1,4 +1,4 @@
-import { Award, MapPin } from "lucide-react";
+import { Award } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import { VIDEOS } from "../../config/videos";
@@ -22,11 +22,6 @@ export default function Hero() {
       </div>
 
       <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
-        {/* Location Badge */}
-        <div className="absolute top-0 right-6 flex items-center gap-2 text-white/80 text-sm">
-          <MapPin className="w-4 h-4" />
-          <span>Panamá, City.</span>
-        </div>
         <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-[#d4af37]/30 rounded-full mb-8 bg-[#d4af37]/5 backdrop-blur-md">
           <Award className="w-4 h-4 text-[#d4af37]" />
           <span className="text-xs uppercase tracking-[0.2em] text-[#d4af37]">{t('hero.tagline')}</span>
