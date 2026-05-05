@@ -27,9 +27,8 @@ export default function Hero() {
           <span className="text-xs uppercase tracking-[0.2em] text-[#d4af37]">{t('hero.tagline')}</span>
         </div>
 
-        <h1 className="text-5xl md:text-8xl mb-8 leading-[1.1] font-bold">
-          {t('hero.title')} <br />
-          <span className="gold-gradient italic">{t('hero.titleHighlight')}</span>
+        <h1 className="text-5xl md:text-8xl mb-8 leading-[1.1] font-bold gold-gradient">
+          {t('hero.title')}
         </h1>
 
         <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
