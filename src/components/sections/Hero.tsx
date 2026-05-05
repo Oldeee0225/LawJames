@@ -25,7 +25,7 @@ export default function Hero() {
         {/* Location Badge */}
         <div className="absolute top-0 right-6 flex items-center gap-2 text-white/80 text-sm">
           <MapPin className="w-4 h-4" />
-          <span>Panama City</span>
+          <span>Panamá, City.</span>
         </div>
         <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-[#d4af37]/30 rounded-full mb-8 bg-[#d4af37]/5 backdrop-blur-md">
           <Award className="w-4 h-4 text-[#d4af37]" />
