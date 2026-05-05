@@ -2,6 +2,12 @@ import { Mail, Phone, MessageSquare, Loader2, CheckCircle2 } from "lucide-react"
 import { useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 
+declare global {
+  interface Window {
+    fbq: any;
+  }
+}
+
 const isValidEmail = (email: string) => {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 };
@@ -46,7 +52,7 @@ export default function Contact() {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      await fetch("https://formsubmit.co/ajax/admin@yanguezlegalgroup.com", {
+      const response = await fetch("https://formsubmit.co/ajax/admin@yanguezlegalgroup.com", {
         method: "POST",
         headers: { 
             'Content-Type': 'application/json',
@@ -64,10 +70,20 @@ export default function Contact() {
         })
       });
 
-      setStatus('success');
-      form.reset();
-      setEmailValue("");
-      setTimeout(() => setStatus('idle'), 5000);
+      if (response.ok) {
+        if (window.fbq) {
+          window.fbq('track', 'Lead', {
+            content_name: 'Consultation Form',
+            value: 1,
+            currency: 'USD'
+          });
+        }
+
+        setStatus('success');
+        form.reset();
+        setEmailValue("");
+        setTimeout(() => setStatus('idle'), 5000);
+      }
       
     } catch (error) {
       console.error(error);
@@ -214,6 +230,11 @@ export default function Contact() {
               <button 
                 type="submit"
                 disabled={status === 'submitting'}
+                onClick={() => {
+                  if (window.fbq) {
+                    window.fbq('trackCustom', 'ClickConsulta');
+                  }
+                }}
                 className="w-full flex items-center justify-center gap-2 bg-[#d4af37] hover:bg-[#b8962e] text-black font-bold py-5 rounded-lg transition-all btn-premium shadow-lg shadow-[#d4af37]/10 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {status === 'idle' && t('contact.submitIdle')}
